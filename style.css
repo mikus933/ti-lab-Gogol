@@ -1,1 +1,96 @@
+/* --- Style ogólne --- */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
 
+/* --- Zadanie 2: Nawigacja we flexie --- */
+.site-header {
+    display: flex; /* */
+    justify-content: space-between; /*[cite: 18] */
+    align-items: center; /*[cite: 18] */
+    margin-bottom: 40px;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.menu {
+    display: flex; /*[cite: 18] */
+    gap: 16px; /*[cite: 11, 18] */
+}
+
+.menu a {
+    color: #4426FF; /*[cite: 11] */
+    text-decoration: none; /*[cite: 11, 18] */
+    font-weight: bold;
+}
+
+.menu a:hover {
+    color: #ff26a5; /*[cite: 18] */
+}
+
+/* --- Zadanie 3: Karty usług --- */
+.cards {
+    display: flex; /* */
+    flex-wrap: wrap; /*[cite: 19] */
+    gap: 24px; /*[cite: 19] */
+    margin-bottom: 40px;
+}
+
+.card {
+    flex: 1 1 260px; /*[cite: 19] */
+    border: 1px solid #ddd; /*[cite: 11] */
+    border-radius: 8px; /*[cite: 11] */
+    padding: 16px; /*[cite: 11] */
+    transition: transform 0.2s, box-shadow 0.2s; /* Płynne przejście dla hovera */
+}
+
+.card--highlight {
+    border-color: #4426FF; /*[cite: 11] */
+    background: #EEF; /*[cite: 11] */
+}
+
+.card_price {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* --- Zadanie 4: Cennik --- */
+.price-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 40px;
+}
+
+.price-table th, .price-table td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.price-table th {
+    text-align: left;
+}
+
+.num {
+    text-align: right; /* */
+}
+
+/* --- Zadanie Bonusowe --- */
+.card:hover {
+    transform: translateY(-6px); /* */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1); /*[cite: 21] */
+}
+
+@media (max-width: 600px) {
+    .site-header {
+        flex-direction: column; /*[cite: 21] */
+    }
+}
