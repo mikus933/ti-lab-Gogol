@@ -1,4 +1,4 @@
-/* --- Style ogólne --- */
+
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
@@ -9,7 +9,7 @@ body {
     margin-right: auto;
 }
 
-/* --- Zadanie 2: Nawigacja we flexie --- */
+
 .site-header {
     display: flex; /* */
     justify-content: space-between; /*[cite: 18] */
@@ -37,7 +37,7 @@ body {
     color: #ff26a5; /*[cite: 18] */
 }
 
-/* --- Zadanie 3: Karty usług --- */
+
 .cards {
     display: flex; /* */
     flex-wrap: wrap; /*[cite: 19] */
@@ -63,7 +63,7 @@ body {
     font-size: 1.2rem;
 }
 
-/* --- Zadanie 4: Cennik --- */
+
 .price-table {
     width: 100%;
     border-collapse: collapse;
@@ -83,7 +83,7 @@ body {
     text-align: right; /* */
 }
 
-/* --- Zadanie Bonusowe --- */
+
 .card:hover {
     transform: translateY(-6px); /* */
     box-shadow: 0 4px 12px rgba(0,0,0,0.1); /*[cite: 21] */
