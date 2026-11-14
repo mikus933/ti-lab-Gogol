@@ -38,7 +38,7 @@ $cennik = [
         
         <nav class="menu">
             <a href="#uslugi">Usługi</a>
-            <a href="#cennik">Cennik</a>
+            <a href="#cennik">Cennikk</a>
             <a href="#kontakt">Kontakt</a>
         </nav>
     </header>
