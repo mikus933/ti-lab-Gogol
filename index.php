@@ -1,11 +1,16 @@
-<?php​
+<?php
+$firma = 'Szprycha';
+$rok = date('Y');
 
-$firma = 'Szprycha';​
-
-$rok = date('Y');​
-
-?>​
-
+// Tablica z usługami do zadania 3
+$cennik = [
+    ['nazwa' => 'Przegląd', 'cena' => 120],
+    ['nazwa' => 'Kompletny serwis', 'cena' => 250],
+    ['nazwa' => 'Wymiana dętki', 'cena' => 50],
+    ['nazwa' => 'Centrowanie koła', 'cena' => 70],
+    ['nazwa' => 'Mycie roweru', 'cena' => 40]
+];
+?>
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -17,8 +22,20 @@ $rok = date('Y');​
 </head>
 <body>
     <header class="site-header">
-        <p class="logo">Szprycha</p>
+        <!-- Zadanie 4: Logo SVG z dorysowaną ramą z polyline -->
+        <a class="logo" href="#" style="display: flex; align-items: center; gap: 10px; text-decoration: none; color: inherit;">
+            <svg viewBox="0 0 120 64" width="72" height="38" role="img" aria-labelledby="logo-tytul">
+                <title id="logo-tytul">Szprycha</title>
+                <circle cx="28" cy="42" r="18" fill="none" stroke="#4426FF" stroke-width="5"/>
+                <circle cx="92" cy="42" r="18" fill="none" stroke="#4426FF" stroke-width="5"/>
+                <polyline points="28,42 48,14 80,14 92,42" fill="none" stroke="#111" stroke-width="5"/>
+                <polyline points="48,14 60,42 80,14" fill="none" stroke="#111" stroke-width="5"/>
+            </svg>
+            <span>Szprycha</span>
+        </a>
+        
         <button class="menu-toggle" aria-expanded="false">Menu</button>
+        
         <nav class="menu">
             <a href="#uslugi">Usługi</a>
             <a href="#cennik">Cennik</a>
@@ -59,22 +76,13 @@ $rok = date('Y');​
                     </tr>
                 </thead>
                 <tbody>
+                    <!-- Zadanie 3: Pętla foreach iterująca po tablicy $cennik -->
+                    <?php foreach ($cennik as $usluga): ?>
                     <tr>
-                        <td>Przegląd</td>
-                        <td class="num">120 zł</td>
+                        <td><?= htmlspecialchars($usluga['nazwa']) ?></td>
+                        <td class="num"><?= $usluga['cena'] ?> zł</td>
                     </tr>
-                    <tr>
-                        <td>Kompletny serwis</td>
-                        <td class="num">250 zł</td>
-                    </tr>
-                    <tr>
-                        <td>Wymiana dętki</td>
-                        <td class="num">50 zł</td>
-                    </tr>
-                    <tr>
-                        <td>Centrowanie koła</td>
-                        <td class="num">70 zł</td>
-                    </tr>
+                    <?php endforeach; ?>
                 </tbody>
             </table>
         </section>
@@ -85,7 +93,8 @@ $rok = date('Y');​
         <p>Pracownia Rowerowa Szprycha, Bydgoszcz</p>
         <p>Zadzwoń: <a href="tel:+48500100200">500 100 200</a></p>
         <p>Napisz: <a href="mailto:kontakt@szprycha.pl">kontakt@szprycha.pl</a></p>
-        <p>&copy; <?= $rok ?> <?= $firma ?></p>​
+        <!-- Zadanie 2: Stopka z dynamicznymi zmiennymi PHP -->
+        <p>&copy; <?= $rok ?> <?= $firma ?></p>
     </footer>
 </body>
 </html>
